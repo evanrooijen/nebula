@@ -19,5 +19,17 @@ jobs:
       - run:
           command: yarn nx affected --target=test --base=$NX_BASE
           name: Run Unit Tests
-          
+  e2e:
+    docker:
+      - image: 'cimg/node:16.14.2-browsers'
+    steps:
+      - checkout
+      - run:
+          command: npm ci
+          name: Install dependencies
+      - nx/set-shas
+      - run:
+          command: yarn nx affected --target=e2e --base=$NX_BASE
+          name: Run Integration Tests
+
 workflows: null

@@ -14,7 +14,7 @@ jobs:
           name: Install dependencies
       - nx/set-shas
       - run:
-          command: npx nx affected --target=test --base=$NX_BASE
+          command: npx nx affected --target=test --base=$NX_BASE --parallel
           name: Run Unit Tests
   test:
     docker:
@@ -26,7 +26,7 @@ jobs:
           name: Install dependencies
       - nx/set-shas
       - run:
-          command: npx nx affected --target=test --base=$NX_BASE
+          command: npx nx affected --target=test --base=$NX_BASE --parallel
           name: Run Unit Tests
   e2e:
     docker:

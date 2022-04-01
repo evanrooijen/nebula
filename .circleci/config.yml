@@ -57,6 +57,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
+      - analyze
       - build
       - test
       - e2e

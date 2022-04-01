@@ -14,10 +14,10 @@ jobs:
           name: Install dependencies
       - nx/set-shas
       - run:
-          command: yarn nx affected --target=build --base=$NX_BASE
+          command: npx nx affected --target=build --base=$NX_BASE
           name: Run Builds
       - run:
-          command: yarn nx affected --target=test --base=$NX_BASE
+          command: npx nx affected --target=test --base=$NX_BASE
           name: Run Unit Tests
   e2e:
     docker:
@@ -29,7 +29,7 @@ jobs:
           name: Install dependencies
       - nx/set-shas
       - run:
-          command: yarn nx affected --target=e2e --base=$NX_BASE
+          command: npx nx affected --target=e2e --base=$NX_BASE
           name: Run Integration Tests
 
 workflows: null

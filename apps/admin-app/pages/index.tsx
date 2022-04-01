@@ -8,6 +8,7 @@ export function Index() {
   return (
     <div>
       <h1>Welcome admin-app</h1>
+      <h1>Home</h1>
     </div>
   );
 }

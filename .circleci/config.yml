@@ -4,6 +4,18 @@ orbs:
   nx: nrwl/nx@1.3.0
 
 jobs:
+  analyze:
+    docker:
+      - image: 'cimg/node:16.14.2-browsers'
+    steps:
+      - checkout
+      - run:
+          command: npm ci
+          name: Install dependencies
+      - nx/set-shas
+      - run:
+          command: npx nx affected --target=lint --base=$NX_BASE --parallel
+          name: Run Linting
   build:
     docker:
       - image: 'cimg/node:16.14.2-browsers'

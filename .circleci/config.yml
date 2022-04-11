@@ -23,7 +23,7 @@ jobs:
       - node/install-packages
       - nx/set-shas
       - run:
-          command: npx nx affected --target=test --base=$NX_BASE --parallel
+          command: npx nx affected --target=build --base=$NX_BASE --parallel
           name: Run Unit Tests
   test:
     docker:
